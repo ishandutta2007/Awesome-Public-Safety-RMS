@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1128" />
+      <stop offset="50%" stop-color="#1c2541" />
+      <stop offset="100%" stop-color="#0b132b" />
+    </linearGradient>
+
+    <linearGradient id="accent-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3a86ff" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#00f5d4" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#ff007f" stop-opacity="0.8" />
+    </linearGradient>
+
+    <pattern id="cyber-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0, 245, 212, 0.07)" stroke-width="1" />
+    </pattern>
+
+    <style>
+      @keyframes pulse {
+        0% { transform: scale(0.8); opacity: 0.3; }
+        50% { transform: scale(1.1); opacity: 0.8; }
+        100% { transform: scale(0.8); opacity: 0.3; }
+      }
+      @keyframes scan {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @keyframes beacon {
+        0%, 100% { fill: #ff0055; opacity: 0.9; }
+        50% { fill: #3a86ff; opacity: 0.4; }
+      }
+      .radar-sweep {
+        transform-origin: 150px 150px;
+        animation: scan 8s linear infinite;
+      }
+      .beacon-dot {
+        animation: beacon 2s ease-in-out infinite;
+      }
+      .pulse-ring {
+        transform-origin: 150px 150px;
+        animation: pulse 4s ease-in-out infinite;
+      }
+    </style>
+  </defs>
+
+  <rect width="1200" height="300" fill="url(#bg-gradient)" rx="16" />
+  <rect width="1200" height="300" fill="url(#cyber-grid)" rx="16" />
+
+  <g transform="translate(10, 0)">
+    <circle cx="150" cy="150" r="100" fill="none" stroke="#3a86ff" stroke-width="1.5" opacity="0.3" />
+    <circle cx="150" cy="150" r="70" fill="none" stroke="#00f5d4" stroke-width="1" opacity="0.4" />
+    <circle cx="150" cy="150" r="40" fill="none" stroke="#3a86ff" stroke-width="1.5" opacity="0.5" />
+    <circle class="pulse-ring" cx="150" cy="150" r="85" fill="none" stroke="#00f5d4" stroke-width="2" stroke-dasharray="8,6" />
+    
+    <g class="radar-sweep">
+      <path d="M 150 150 L 250 150 A 100 100 0 0 0 150 50 Z" fill="url(#accent-glow)" opacity="0.25" />
+      <line x1="150" y1="150" x2="250" y2="150" stroke="#00f5d4" stroke-width="2" />
+    </g>
+    
+    <circle class="beacon-dot" cx="190" cy="110" r="5" />
+    <circle class="beacon-dot" cx="120" cy="180" r="4" style="animation-delay: 1s;" />
+    <circle class="beacon-dot" cx="210" cy="170" r="6" style="animation-delay: 0.5s;" />
+  </g>
+
+  <g transform="translate(320, 110)">
+    <rect x="0" y="-45" width="280" height="28" rx="14" fill="rgba(58, 134, 255, 0.15)" stroke="#3a86ff" stroke-width="1" />
+    <text x="140" y="-26" fill="#00f5d4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" letter-spacing="2" text-anchor="middle">
+      🛡️ PUBLIC SAFETY &amp; DISPATCH
+    </text>
+
+    <text x="0" y="25" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="900" letter-spacing="1">
+      Awesome Public Safety RMS
+    </text>
+
+    <rect x="0" y="40" width="620" height="4" rx="2" fill="url(#accent-glow)" />
+
+    <text x="0" y="72" fill="#8d99ae" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="400">
+      Curated CAD, RMS, 911 Dispatch, GIS &amp; Emergency Response Platforms
+    </text>
+  </g>
+
+  <g transform="translate(1020, 75)">
+    <path d="M 60 10 L 110 30 C 110 90 60 140 60 140 C 60 140 10 90 10 30 Z" fill="none" stroke="url(#accent-glow)" stroke-width="4" />
+    <path d="M 60 25 L 98 40 C 98 88 60 126 60 126 C 60 126 22 88 22 40 Z" fill="rgba(0, 245, 212, 0.08)" stroke="#3a86ff" stroke-width="1.5" />
+    <polygon points="60,45 64,57 77,57 66,65 70,77 60,69 50,77 54,65 43,57 56,57" fill="#00f5d4" />
+  </g>
+
+  <rect x="0" y="0" width="1200" height="5" fill="url(#accent-glow)" />
+  <rect x="0" y="295" width="1200" height="5" fill="url(#accent-glow)" />
+</svg>
